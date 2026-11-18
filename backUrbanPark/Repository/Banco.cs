@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace backUrbanPark.Repository;
 
-public static class Data
+public static class Banco
 {
     // String de conexão com os dados do servidor MySQL/MariaDB
     private static readonly string stringDeConexao = "Server=10.91.45.58;Port=3306;Database=urbanpark;Uid=admin;Pwd=12345678";
