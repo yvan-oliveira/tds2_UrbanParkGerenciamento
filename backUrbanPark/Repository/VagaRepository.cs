@@ -16,9 +16,14 @@ public class VagaRepository
         return 1;
     }
 
-    public Vaga? BuscarPorId(int id)
+    /// <summary>
+    /// Busca uma vaga no banco de dados pelo seu ID.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    public Vaga? ListarPorId(int id)
     {
-        string sql = "sp_buscarVagaPorId";
+        string sql = "sp_listar_vaga_por_id";
 
         using (var cmd = new MySqlCommand(sql))
         {
@@ -27,15 +32,51 @@ public class VagaRepository
 
             using (var reader = Banco.ExecutarConsulta(cmd))
             {
-                Vaga vagaBanco = new Vaga();
-
-                vagaBanco.Id = reader.GetInt32("id_vaga");
-                vagaBanco.NumeroVaga = reader.GetInt32("numero_vaga");
-                vagaBanco.TipoVaga = Enum.Parse<TipoVaga>(reader["tipo"].ToString());
-                vagaBanco.StatusVaga = Enum.Parse<StatusVaga>(reader["status"].ToString());
-
-                return vagaBanco;
+                Vaga vagaBanco = MapearVaga(reader);
             }
         }
+        return null;
     }
+
+    /// <summary>
+    /// Retorna uma lista de todas as vagas cadastradas no banco de dados.
+    /// </summary>
+    /// <returns></returns>
+    public List<Vaga> ListarTodas()
+    {
+        string sql = "sp_listar_todas_vagas";
+
+        List<Vaga> vagas = new List<Vaga>();
+
+        using (var cmd = new MySqlCommand(sql))
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            using (var reader = Banco.ExecutarConsulta(cmd))
+            {
+                while (reader.Read())
+                {
+                    vagas.Add(MapearVaga(reader));
+                }
+            }
+        }
+        return vagas;
+    }
+
+    /// <summary>
+    /// Metodo auxiliar para mapear os dados do reader para um objeto Vaga.
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <returns></returns>
+    private Vaga MapearVaga(MySqlDataReader reader)
+    {
+        int id_vaga = reader.GetInt32("id_vaga");
+        int numeroVaga = reader.GetInt32("numero_vaga");
+        TipoVaga tipoVaga = Enum.Parse<TipoVaga>(reader["tipo"].ToString());
+        StatusVaga statusVaga = Enum.Parse<StatusVaga>(reader["status"].ToString());
+        
+        return new Vaga(id_vaga, numeroVaga, tipoVaga, statusVaga);
+    }
+
+
 }
