@@ -13,7 +13,17 @@ public class VagaRepository
     /// <returns></returns>
     public int Inserir(Vaga vaga)
     {
-        return 1;
+        string sql = "sp_inserir_vaga";
+        using (var cmd = new MySqlCommand(sql))
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@p_numero_vaga", vaga.NumeroVaga);
+            cmd.Parameters.AddWithValue("@p_tipo", vaga.TipoVaga);
+            cmd.Parameters.AddWithValue("@p_status", vaga.StatusVaga);
+
+            return Banco.ExecutarComando(cmd);
+        }
     }
 
     /// <summary>
@@ -28,7 +38,7 @@ public class VagaRepository
         using (var cmd = new MySqlCommand(sql))
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@p_id", id);
 
             using (var reader = Banco.ExecutarConsulta(cmd))
             {
@@ -77,6 +87,5 @@ public class VagaRepository
         
         return new Vaga(id_vaga, numeroVaga, tipoVaga, statusVaga);
     }
-
 
 }

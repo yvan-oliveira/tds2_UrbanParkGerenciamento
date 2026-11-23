@@ -7,6 +7,8 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        Banco.TestarConexao();
+
         List<Vaga> vagas = new VagaRepository().ListarTodas();
 
         foreach (var vaga in vagas)
