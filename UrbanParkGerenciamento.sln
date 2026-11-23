@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36804.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmUrbanPark", "UrbanParkGerenciamento\frmUrbanPark.csproj", "{5B92A79B-963A-4BC0-87F4-F7A98CF98E59}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backUrbanPark", "backUrbanPark\backUrbanPark.csproj", "{6E0E13CE-C0E8-4477-85D8-A86C195A8ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmUrbanPark", "frmUrbanPark\frmUrbanPark.csproj", "{FBC67D98-EB2F-0DB1-ED00-1CDADC422274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5B92A79B-963A-4BC0-87F4-F7A98CF98E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B92A79B-963A-4BC0-87F4-F7A98CF98E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B92A79B-963A-4BC0-87F4-F7A98CF98E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B92A79B-963A-4BC0-87F4-F7A98CF98E59}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E0E13CE-C0E8-4477-85D8-A86C195A8ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E0E13CE-C0E8-4477-85D8-A86C195A8ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0E13CE-C0E8-4477-85D8-A86C195A8ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0E13CE-C0E8-4477-85D8-A86C195A8ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC67D98-EB2F-0DB1-ED00-1CDADC422274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC67D98-EB2F-0DB1-ED00-1CDADC422274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC67D98-EB2F-0DB1-ED00-1CDADC422274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC67D98-EB2F-0DB1-ED00-1CDADC422274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

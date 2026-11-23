@@ -28,18 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ctr_StatusVagas1 = new UrbanParkGerenciamento.Parts.ctr_StatusVagas();
             SuspendLayout();
+            // 
+            // ctr_StatusVagas1
+            // 
+            ctr_StatusVagas1.BackColor = Color.FromArgb(223, 247, 231);
+            ctr_StatusVagas1.Location = new Point(126, 100);
+            ctr_StatusVagas1.Name = "ctr_StatusVagas1";
+            ctr_StatusVagas1.Size = new Size(150, 150);
+            ctr_StatusVagas1.TabIndex = 0;
             // 
             // frm_ListVagas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ctr_StatusVagas1);
             Name = "frm_ListVagas";
             Text = "frm_ListVagas";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Parts.ctr_StatusVagas ctr_StatusVagas1;
     }
 }
