@@ -4,14 +4,14 @@ using System.Data;
 
 namespace backUrbanPark.Repository;
 
-public class VagaRepository
+public static class VagaRepository
 {
     /// <summary>
     /// Insere uma nova vaga no banco de dados.
     /// </summary>
     /// <param name="vaga"></param>
     /// <returns></returns>
-    public int Inserir(Vaga vaga)
+    public static int InserirVaga(Vaga vaga)
     {
         string sql = "sp_inserir_vaga";
         using (var cmd = new MySqlCommand(sql))
@@ -31,7 +31,7 @@ public class VagaRepository
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    public Vaga? ListarPorId(int id)
+    public static Vaga? ListarVagaPorId(int id)
     {
         string sql = "sp_listar_vaga_por_id";
 
@@ -52,7 +52,7 @@ public class VagaRepository
     /// Retorna uma lista de todas as vagas cadastradas no banco de dados.
     /// </summary>
     /// <returns></returns>
-    public List<Vaga> ListarTodas()
+    public static List<Vaga> ListarTodasVagas()
     {
         string sql = "sp_listar_todas_vagas";
 
@@ -78,7 +78,7 @@ public class VagaRepository
     /// </summary>
     /// <param name="reader"></param>
     /// <returns></returns>
-    private Vaga MapearVaga(MySqlDataReader reader)
+    private static Vaga MapearVaga(MySqlDataReader reader)
     {
         int id_vaga = reader.GetInt32("id_vaga");
         int numeroVaga = reader.GetInt32("numero_vaga");
