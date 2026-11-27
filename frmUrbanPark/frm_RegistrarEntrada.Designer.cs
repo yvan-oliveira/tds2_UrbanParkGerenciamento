@@ -28,31 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RegistrarEntrada));
             pnl_Cabecalho = new Panel();
+            panel4 = new Panel();
+            panel1 = new Panel();
+            label1 = new Label();
             lbl_Subtitulo = new Label();
             lbl_Titulo = new Label();
             pic_Logo = new PictureBox();
             grp_BuscarVeiculo = new GroupBox();
+            msk_Placaveiculo = new MaskedTextBox();
+            button1 = new Button();
+            imgIconePesquisa = new ImageList(components);
             lbl_PlacaVeiculo = new Label();
-            btn_BuscarPorPlaca = new Button();
+            imgIconeCancelar = new ImageList(components);
             grp_DadosVeiculo = new GroupBox();
+            txt_CorModelo = new TextBox();
+            txt_NomeCliente = new TextBox();
             lbl_CorModelo = new Label();
             lbl_Cliente = new Label();
             grp_Movimentacao = new GroupBox();
+            dtp_InfoHrEntrada = new DateTimePicker();
+            dtp_InfoDtEntrada = new DateTimePicker();
+            lbl_HoraDeEntrada = new Label();
+            lblDataEntrada = new Label();
+            txt_VagaSelecionada = new TextBox();
             lbl_VagaSelecionada = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
             btn_Cancelar = new Button();
             btn_RegistrarEntrada = new Button();
-            txt_NomeCliente = new TextBox();
-            txt_CorModelo = new TextBox();
-            txt_PlacaVeiculo = new TextBox();
-            txt_VagaSelecionada = new TextBox();
-            lblDataEntrada = new Label();
-            lbl_HoraDeEntrada = new Label();
-            dtp_InfoDtEntrada = new DateTimePicker();
-            dtp_InfoHrEntrada = new DateTimePicker();
-            label1 = new Label();
+            imgIconeConfirmar = new ImageList(components);
+            imageList1 = new ImageList(components);
             pnl_Cabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Logo).BeginInit();
             grp_BuscarVeiculo.SuspendLayout();
@@ -64,7 +72,9 @@
             // 
             // pnl_Cabecalho
             // 
-            pnl_Cabecalho.BackColor = SystemColors.Highlight;
+            pnl_Cabecalho.BackColor = SystemColors.HotTrack;
+            pnl_Cabecalho.Controls.Add(panel4);
+            pnl_Cabecalho.Controls.Add(panel1);
             pnl_Cabecalho.Controls.Add(label1);
             pnl_Cabecalho.Controls.Add(lbl_Subtitulo);
             pnl_Cabecalho.Controls.Add(lbl_Titulo);
@@ -76,12 +86,39 @@
             pnl_Cabecalho.Size = new Size(892, 100);
             pnl_Cabecalho.TabIndex = 0;
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.White;
+            panel4.Location = new Point(154, 17);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1, 65);
+            panel4.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Location = new Point(428, 17);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1, 65);
+            panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(451, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(351, 28);
+            label1.TabIndex = 3;
+            label1.Text = "Inicia a movimentação do veículo no estacionado.";
+            // 
             // lbl_Subtitulo
             // 
             lbl_Subtitulo.BackColor = Color.Transparent;
             lbl_Subtitulo.Font = new Font("Segoe Fluent Icons", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_Subtitulo.ForeColor = Color.White;
-            lbl_Subtitulo.Location = new Point(417, 9);
+            lbl_Subtitulo.Location = new Point(445, 10);
             lbl_Subtitulo.Name = "lbl_Subtitulo";
             lbl_Subtitulo.Size = new Size(238, 49);
             lbl_Subtitulo.TabIndex = 2;
@@ -90,9 +127,9 @@
             // lbl_Titulo
             // 
             lbl_Titulo.BackColor = Color.Transparent;
-            lbl_Titulo.Font = new Font("Segoe Fluent Icons", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_Titulo.Font = new Font("Segoe Fluent Icons", 45.75F, FontStyle.Bold);
             lbl_Titulo.ForeColor = Color.White;
-            lbl_Titulo.Location = new Point(175, 9);
+            lbl_Titulo.Location = new Point(166, 5);
             lbl_Titulo.Name = "lbl_Titulo";
             lbl_Titulo.Size = new Size(259, 88);
             lbl_Titulo.TabIndex = 1;
@@ -100,17 +137,19 @@
             // 
             // pic_Logo
             // 
-            pic_Logo.Location = new Point(38, 12);
+            pic_Logo.Image = frmUrbanPark.Properties.Resources.logo;
+            pic_Logo.Location = new Point(38, 13);
             pic_Logo.Name = "pic_Logo";
             pic_Logo.Size = new Size(100, 73);
+            pic_Logo.SizeMode = PictureBoxSizeMode.StretchImage;
             pic_Logo.TabIndex = 0;
             pic_Logo.TabStop = false;
             // 
             // grp_BuscarVeiculo
             // 
-            grp_BuscarVeiculo.Controls.Add(txt_PlacaVeiculo);
+            grp_BuscarVeiculo.Controls.Add(msk_Placaveiculo);
+            grp_BuscarVeiculo.Controls.Add(button1);
             grp_BuscarVeiculo.Controls.Add(lbl_PlacaVeiculo);
-            grp_BuscarVeiculo.Controls.Add(btn_BuscarPorPlaca);
             grp_BuscarVeiculo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grp_BuscarVeiculo.ForeColor = SystemColors.HotTrack;
             grp_BuscarVeiculo.Location = new Point(25, 120);
@@ -119,6 +158,40 @@
             grp_BuscarVeiculo.TabIndex = 1;
             grp_BuscarVeiculo.TabStop = false;
             grp_BuscarVeiculo.Text = "Buscar Veículo";
+            // 
+            // msk_Placaveiculo
+            // 
+            msk_Placaveiculo.BorderStyle = BorderStyle.FixedSingle;
+            msk_Placaveiculo.Location = new Point(152, 47);
+            msk_Placaveiculo.Mask = "000-0000";
+            msk_Placaveiculo.Name = "msk_Placaveiculo";
+            msk_Placaveiculo.Size = new Size(241, 29);
+            msk_Placaveiculo.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(239, 239, 241);
+            button1.FlatAppearance.BorderColor = SystemColors.GrayText;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F);
+            button1.ForeColor = Color.Black;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.ImageIndex = 0;
+            button1.ImageList = imgIconePesquisa;
+            button1.Location = new Point(426, 47);
+            button1.Name = "button1";
+            button1.Size = new Size(203, 33);
+            button1.TabIndex = 4;
+            button1.Text = "Buscar por Placa";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // imgIconePesquisa
+            // 
+            imgIconePesquisa.ColorDepth = ColorDepth.Depth32Bit;
+            imgIconePesquisa.ImageStream = (ImageListStreamer)resources.GetObject("imgIconePesquisa.ImageStream");
+            imgIconePesquisa.TransparentColor = Color.Transparent;
+            imgIconePesquisa.Images.SetKeyName(0, "iconPesquisa.png");
             // 
             // lbl_PlacaVeiculo
             // 
@@ -131,14 +204,12 @@
             lbl_PlacaVeiculo.TabIndex = 1;
             lbl_PlacaVeiculo.Text = "Placa do veículo:";
             // 
-            // btn_BuscarPorPlaca
+            // imgIconeCancelar
             // 
-            btn_BuscarPorPlaca.Location = new Point(490, 37);
-            btn_BuscarPorPlaca.Name = "btn_BuscarPorPlaca";
-            btn_BuscarPorPlaca.Size = new Size(220, 29);
-            btn_BuscarPorPlaca.TabIndex = 0;
-            btn_BuscarPorPlaca.Text = "Buscar por Placa";
-            btn_BuscarPorPlaca.UseVisualStyleBackColor = true;
+            imgIconeCancelar.ColorDepth = ColorDepth.Depth32Bit;
+            imgIconeCancelar.ImageStream = (ImageListStreamer)resources.GetObject("imgIconeCancelar.ImageStream");
+            imgIconeCancelar.TransparentColor = Color.Transparent;
+            imgIconeCancelar.Images.SetKeyName(0, "iconeCancelar.png");
             // 
             // grp_DadosVeiculo
             // 
@@ -154,6 +225,24 @@
             grp_DadosVeiculo.TabIndex = 2;
             grp_DadosVeiculo.TabStop = false;
             grp_DadosVeiculo.Text = "Dados do Veículo";
+            // 
+            // txt_CorModelo
+            // 
+            txt_CorModelo.BorderStyle = BorderStyle.FixedSingle;
+            txt_CorModelo.Enabled = false;
+            txt_CorModelo.Location = new Point(150, 93);
+            txt_CorModelo.Name = "txt_CorModelo";
+            txt_CorModelo.Size = new Size(241, 29);
+            txt_CorModelo.TabIndex = 5;
+            // 
+            // txt_NomeCliente
+            // 
+            txt_NomeCliente.BorderStyle = BorderStyle.FixedSingle;
+            txt_NomeCliente.Enabled = false;
+            txt_NomeCliente.Location = new Point(150, 40);
+            txt_NomeCliente.Name = "txt_NomeCliente";
+            txt_NomeCliente.Size = new Size(241, 29);
+            txt_NomeCliente.TabIndex = 4;
             // 
             // lbl_CorModelo
             // 
@@ -194,12 +283,66 @@
             grp_Movimentacao.TabStop = false;
             grp_Movimentacao.Text = "Movimentação";
             // 
+            // dtp_InfoHrEntrada
+            // 
+            dtp_InfoHrEntrada.CalendarFont = new Font("Segoe UI", 12F);
+            dtp_InfoHrEntrada.CustomFormat = "00:00";
+            dtp_InfoHrEntrada.Font = new Font("Segoe UI", 12F);
+            dtp_InfoHrEntrada.Format = DateTimePickerFormat.Custom;
+            dtp_InfoHrEntrada.Location = new Point(185, 113);
+            dtp_InfoHrEntrada.Name = "dtp_InfoHrEntrada";
+            dtp_InfoHrEntrada.ShowUpDown = true;
+            dtp_InfoHrEntrada.Size = new Size(86, 29);
+            dtp_InfoHrEntrada.TabIndex = 10;
+            dtp_InfoHrEntrada.Value = new DateTime(2026, 11, 27, 10, 58, 0, 0);
+            // 
+            // dtp_InfoDtEntrada
+            // 
+            dtp_InfoDtEntrada.CalendarFont = new Font("Segoe UI", 12F);
+            dtp_InfoDtEntrada.Font = new Font("Segoe UI", 12F);
+            dtp_InfoDtEntrada.Format = DateTimePickerFormat.Short;
+            dtp_InfoDtEntrada.Location = new Point(185, 72);
+            dtp_InfoDtEntrada.Name = "dtp_InfoDtEntrada";
+            dtp_InfoDtEntrada.Size = new Size(200, 29);
+            dtp_InfoDtEntrada.TabIndex = 9;
+            // 
+            // lbl_HoraDeEntrada
+            // 
+            lbl_HoraDeEntrada.AutoSize = true;
+            lbl_HoraDeEntrada.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_HoraDeEntrada.ForeColor = Color.Black;
+            lbl_HoraDeEntrada.Location = new Point(27, 118);
+            lbl_HoraDeEntrada.Name = "lbl_HoraDeEntrada";
+            lbl_HoraDeEntrada.Size = new Size(124, 21);
+            lbl_HoraDeEntrada.TabIndex = 8;
+            lbl_HoraDeEntrada.Text = "Hora de Entrada:";
+            // 
+            // lblDataEntrada
+            // 
+            lblDataEntrada.AutoSize = true;
+            lblDataEntrada.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDataEntrada.ForeColor = Color.Black;
+            lblDataEntrada.Location = new Point(27, 80);
+            lblDataEntrada.Name = "lblDataEntrada";
+            lblDataEntrada.Size = new Size(123, 21);
+            lblDataEntrada.TabIndex = 7;
+            lblDataEntrada.Text = "Data de Entrada:";
+            // 
+            // txt_VagaSelecionada
+            // 
+            txt_VagaSelecionada.BorderStyle = BorderStyle.FixedSingle;
+            txt_VagaSelecionada.Enabled = false;
+            txt_VagaSelecionada.Location = new Point(185, 34);
+            txt_VagaSelecionada.Name = "txt_VagaSelecionada";
+            txt_VagaSelecionada.Size = new Size(196, 29);
+            txt_VagaSelecionada.TabIndex = 6;
+            // 
             // lbl_VagaSelecionada
             // 
             lbl_VagaSelecionada.AutoSize = true;
             lbl_VagaSelecionada.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_VagaSelecionada.ForeColor = Color.Black;
-            lbl_VagaSelecionada.Location = new Point(36, 39);
+            lbl_VagaSelecionada.Location = new Point(27, 42);
             lbl_VagaSelecionada.Name = "lbl_VagaSelecionada";
             lbl_VagaSelecionada.Size = new Size(134, 21);
             lbl_VagaSelecionada.TabIndex = 3;
@@ -228,108 +371,50 @@
             // 
             // btn_Cancelar
             // 
+            btn_Cancelar.BackColor = Color.FromArgb(239, 239, 241);
+            btn_Cancelar.FlatAppearance.BorderColor = Color.Gray;
+            btn_Cancelar.FlatStyle = FlatStyle.Flat;
+            btn_Cancelar.Font = new Font("Segoe UI", 12F);
+            btn_Cancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_Cancelar.ImageIndex = 0;
+            btn_Cancelar.ImageList = imgIconeCancelar;
             btn_Cancelar.Location = new Point(750, 39);
             btn_Cancelar.Name = "btn_Cancelar";
             btn_Cancelar.Size = new Size(130, 33);
             btn_Cancelar.TabIndex = 3;
             btn_Cancelar.Text = "Cancelar";
-            btn_Cancelar.UseVisualStyleBackColor = true;
+            btn_Cancelar.UseVisualStyleBackColor = false;
+            btn_Cancelar.Click += btn_Cancelar_Click;
             // 
             // btn_RegistrarEntrada
             // 
-            btn_RegistrarEntrada.Location = new Point(578, 39);
+            btn_RegistrarEntrada.BackColor = Color.FromArgb(223, 247, 231);
+            btn_RegistrarEntrada.FlatAppearance.BorderColor = Color.Blue;
+            btn_RegistrarEntrada.FlatStyle = FlatStyle.Flat;
+            btn_RegistrarEntrada.Font = new Font("Segoe UI", 12F);
+            btn_RegistrarEntrada.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_RegistrarEntrada.ImageIndex = 0;
+            btn_RegistrarEntrada.ImageList = imgIconeConfirmar;
+            btn_RegistrarEntrada.Location = new Point(555, 39);
             btn_RegistrarEntrada.Name = "btn_RegistrarEntrada";
-            btn_RegistrarEntrada.Size = new Size(130, 33);
+            btn_RegistrarEntrada.Size = new Size(180, 33);
             btn_RegistrarEntrada.TabIndex = 2;
-            btn_RegistrarEntrada.Text = "Registrar Entrada";
-            btn_RegistrarEntrada.UseVisualStyleBackColor = true;
+            btn_RegistrarEntrada.Text = "         Registrar Entrada";
+            btn_RegistrarEntrada.UseVisualStyleBackColor = false;
             // 
-            // txt_NomeCliente
+            // imgIconeConfirmar
             // 
-            txt_NomeCliente.BorderStyle = BorderStyle.FixedSingle;
-            txt_NomeCliente.Location = new Point(103, 39);
-            txt_NomeCliente.Name = "txt_NomeCliente";
-            txt_NomeCliente.Size = new Size(241, 29);
-            txt_NomeCliente.TabIndex = 4;
+            imgIconeConfirmar.ColorDepth = ColorDepth.Depth32Bit;
+            imgIconeConfirmar.ImageStream = (ImageListStreamer)resources.GetObject("imgIconeConfirmar.ImageStream");
+            imgIconeConfirmar.TransparentColor = Color.Transparent;
+            imgIconeConfirmar.Images.SetKeyName(0, "iconeConfirmar.png");
             // 
-            // txt_CorModelo
+            // imageList1
             // 
-            txt_CorModelo.BorderStyle = BorderStyle.FixedSingle;
-            txt_CorModelo.Location = new Point(150, 93);
-            txt_CorModelo.Name = "txt_CorModelo";
-            txt_CorModelo.Size = new Size(241, 29);
-            txt_CorModelo.TabIndex = 5;
-            // 
-            // txt_PlacaVeiculo
-            // 
-            txt_PlacaVeiculo.BorderStyle = BorderStyle.FixedSingle;
-            txt_PlacaVeiculo.Location = new Point(168, 49);
-            txt_PlacaVeiculo.Name = "txt_PlacaVeiculo";
-            txt_PlacaVeiculo.Size = new Size(241, 29);
-            txt_PlacaVeiculo.TabIndex = 6;
-            // 
-            // txt_VagaSelecionada
-            // 
-            txt_VagaSelecionada.BorderStyle = BorderStyle.FixedSingle;
-            txt_VagaSelecionada.Location = new Point(185, 34);
-            txt_VagaSelecionada.Name = "txt_VagaSelecionada";
-            txt_VagaSelecionada.Size = new Size(196, 29);
-            txt_VagaSelecionada.TabIndex = 6;
-            // 
-            // lblDataEntrada
-            // 
-            lblDataEntrada.AutoSize = true;
-            lblDataEntrada.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDataEntrada.ForeColor = Color.Black;
-            lblDataEntrada.Location = new Point(36, 78);
-            lblDataEntrada.Name = "lblDataEntrada";
-            lblDataEntrada.Size = new Size(123, 21);
-            lblDataEntrada.TabIndex = 7;
-            lblDataEntrada.Text = "Data de Entrada:";
-            // 
-            // lbl_HoraDeEntrada
-            // 
-            lbl_HoraDeEntrada.AutoSize = true;
-            lbl_HoraDeEntrada.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_HoraDeEntrada.ForeColor = Color.Black;
-            lbl_HoraDeEntrada.Location = new Point(27, 118);
-            lbl_HoraDeEntrada.Name = "lbl_HoraDeEntrada";
-            lbl_HoraDeEntrada.Size = new Size(124, 21);
-            lbl_HoraDeEntrada.TabIndex = 8;
-            lbl_HoraDeEntrada.Text = "Hora de Entrada:";
-            // 
-            // dtp_InfoDtEntrada
-            // 
-            dtp_InfoDtEntrada.CalendarFont = new Font("Segoe UI", 12F);
-            dtp_InfoDtEntrada.Font = new Font("Segoe UI", 12F);
-            dtp_InfoDtEntrada.Format = DateTimePickerFormat.Short;
-            dtp_InfoDtEntrada.Location = new Point(193, 78);
-            dtp_InfoDtEntrada.Name = "dtp_InfoDtEntrada";
-            dtp_InfoDtEntrada.Size = new Size(200, 29);
-            dtp_InfoDtEntrada.TabIndex = 9;
-            // 
-            // dtp_InfoHrEntrada
-            // 
-            dtp_InfoHrEntrada.CalendarFont = new Font("Segoe UI", 12F);
-            dtp_InfoHrEntrada.Font = new Font("Segoe UI", 12F);
-            dtp_InfoHrEntrada.Format = DateTimePickerFormat.Time;
-            dtp_InfoHrEntrada.Location = new Point(181, 125);
-            dtp_InfoHrEntrada.Name = "dtp_InfoHrEntrada";
-            dtp_InfoHrEntrada.Size = new Size(200, 29);
-            dtp_InfoHrEntrada.TabIndex = 10;
-            dtp_InfoHrEntrada.Value = new DateTime(2026, 11, 26, 10, 58, 0, 0);
-            // 
-            // label1
-            // 
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe Fluent Icons", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(417, 58);
-            label1.Name = "label1";
-            label1.Size = new Size(351, 39);
-            label1.TabIndex = 3;
-            label1.Text = "Inicia a movimentação do veículo no estacionado.";
-            label1.Click += this.label1_Click;
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "iconeConfirmar.png");
             // 
             // frm_RegistrarEntrada
             // 
@@ -341,8 +426,11 @@
             Controls.Add(grp_Movimentacao);
             Controls.Add(grp_BuscarVeiculo);
             Controls.Add(pnl_Cabecalho);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frm_RegistrarEntrada";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UrbanPark - Registrar Entrada";
+            Load += frm_RegistrarEntrada_Load;
             pnl_Cabecalho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pic_Logo).EndInit();
             grp_BuscarVeiculo.ResumeLayout(false);
@@ -363,7 +451,6 @@
         private GroupBox grp_DadosVeiculo;
         private GroupBox grp_Movimentacao;
         private Panel panel2;
-        private Button btn_BuscarPorPlaca;
         private Panel panel3;
         private Button btn_RegistrarEntrada;
         private Button btn_Cancelar;
@@ -376,12 +463,19 @@
         private Label lbl_VagaSelecionada;
         private TextBox txt_NomeCliente;
         private TextBox txt_CorModelo;
-        private TextBox txt_PlacaVeiculo;
         private TextBox txt_VagaSelecionada;
         private Label lblDataEntrada;
         private Label lbl_HoraDeEntrada;
         private DateTimePicker dtp_InfoDtEntrada;
         private DateTimePicker dtp_InfoHrEntrada;
         private Label label1;
+        private Panel panel4;
+        private Panel panel1;
+        private ImageList imgIconeConfirmar;
+        private ImageList imgIconeCancelar;
+        private Button button1;
+        private ImageList imageList1;
+        private ImageList imgIconePesquisa;
+        private MaskedTextBox msk_Placaveiculo;
     }
 }

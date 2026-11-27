@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ListVagas));
             flw_CardVagas = new FlowLayoutPanel();
             SuspendLayout();
             // 
@@ -45,7 +46,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(flw_CardVagas);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frm_ListVagas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frm_ListVagas";
             Load += frm_ListVagas_Load;
             ResumeLayout(false);

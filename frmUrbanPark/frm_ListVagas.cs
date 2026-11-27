@@ -1,6 +1,7 @@
 ﻿using backUrbanPark;
 using backUrbanPark.Model;
 using backUrbanPark.Repository;
+using frmUrbanPark;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,7 +59,18 @@ namespace UrbanParkGerenciamento
         {
             ctr_StatusVagas cardSelecionado = (ctr_StatusVagas)sender;
 
-            MessageBox.Show($"Vaga selecionada: {cardSelecionado.NumeroVaga}\nStatus: {cardSelecionado.StatusVaga}\nTipo: {cardSelecionado.TipoVaga}");
+            if (cardSelecionado.StatusVaga == EStatusVagas.Livre)
+            {
+                frm_RegistrarEntrada frmEntrada = new frm_RegistrarEntrada(cardSelecionado.NumeroVaga, cardSelecionado.IdVaga);
+
+                frmEntrada.ShowDialog();
+            }
+            else
+            {
+                frm_RegistrarSaida frmSaida = new frm_RegistrarSaida(cardSelecionado.NumeroVaga, cardSelecionado.IdVaga);
+
+                frmSaida.ShowDialog();
+            }
         }
     }
 }

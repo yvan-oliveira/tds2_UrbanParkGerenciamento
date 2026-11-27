@@ -83,16 +83,6 @@ namespace frmUrbanPark.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icoPesquisa {
-            get {
-                object obj = ResourceManager.GetObject("icoPesquisa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap idosoVerde {
             get {
                 object obj = ResourceManager.GetObject("idosoVerde", resourceCulture);
@@ -106,6 +96,16 @@ namespace frmUrbanPark.Properties {
         internal static System.Drawing.Bitmap idosoVermelho {
             get {
                 object obj = ResourceManager.GetObject("idosoVermelho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
