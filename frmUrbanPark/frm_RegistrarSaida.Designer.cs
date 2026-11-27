@@ -38,7 +38,7 @@
             lbl_CorModelo = new Label();
             lbl_Cliente = new Label();
             grp_BuscarVeiculo = new GroupBox();
-            button2 = new Button();
+            btn_BuscarPorPlaca = new Button();
             imgIconePesquisa = new ImageList(components);
             msk_Placaveiculo = new MaskedTextBox();
             lbl_PlacaVeiculo = new Label();
@@ -157,7 +157,7 @@
             // 
             // grp_BuscarVeiculo
             // 
-            grp_BuscarVeiculo.Controls.Add(button2);
+            grp_BuscarVeiculo.Controls.Add(btn_BuscarPorPlaca);
             grp_BuscarVeiculo.Controls.Add(msk_Placaveiculo);
             grp_BuscarVeiculo.Controls.Add(lbl_PlacaVeiculo);
             grp_BuscarVeiculo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -169,22 +169,22 @@
             grp_BuscarVeiculo.TabStop = false;
             grp_BuscarVeiculo.Text = "Buscar Veículo";
             // 
-            // button2
+            // btn_BuscarPorPlaca
             // 
-            button2.BackColor = Color.FromArgb(239, 239, 241);
-            button2.FlatAppearance.BorderColor = SystemColors.GrayText;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.ForeColor = Color.Black;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.ImageIndex = 0;
-            button2.ImageList = imgIconePesquisa;
-            button2.Location = new Point(446, 37);
-            button2.Name = "button2";
-            button2.Size = new Size(203, 33);
-            button2.TabIndex = 8;
-            button2.Text = "Buscar por Placa";
-            button2.UseVisualStyleBackColor = false;
+            btn_BuscarPorPlaca.BackColor = Color.FromArgb(239, 239, 241);
+            btn_BuscarPorPlaca.FlatAppearance.BorderColor = SystemColors.GrayText;
+            btn_BuscarPorPlaca.FlatStyle = FlatStyle.Flat;
+            btn_BuscarPorPlaca.Font = new Font("Segoe UI", 12F);
+            btn_BuscarPorPlaca.ForeColor = Color.Black;
+            btn_BuscarPorPlaca.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_BuscarPorPlaca.ImageIndex = 0;
+            btn_BuscarPorPlaca.ImageList = imgIconePesquisa;
+            btn_BuscarPorPlaca.Location = new Point(446, 37);
+            btn_BuscarPorPlaca.Name = "btn_BuscarPorPlaca";
+            btn_BuscarPorPlaca.Size = new Size(203, 33);
+            btn_BuscarPorPlaca.TabIndex = 8;
+            btn_BuscarPorPlaca.Text = "Buscar por Placa";
+            btn_BuscarPorPlaca.UseVisualStyleBackColor = false;
             // 
             // imgIconePesquisa
             // 
@@ -584,6 +584,6 @@
         private ImageList imgIconeCancelar;
         private ImageList imageList1;
         private ImageList imgIconePesquisa;
-        private Button button2;
+        private Button btn_BuscarPorPlaca;
     }
 }

@@ -39,7 +39,7 @@
             pic_Logo = new PictureBox();
             grp_BuscarVeiculo = new GroupBox();
             msk_Placaveiculo = new MaskedTextBox();
-            button1 = new Button();
+            btn_BuscarPorPlaca = new Button();
             imgIconePesquisa = new ImageList(components);
             lbl_PlacaVeiculo = new Label();
             imgIconeCancelar = new ImageList(components);
@@ -92,7 +92,7 @@
             panel4.Location = new Point(154, 17);
             panel4.Name = "panel4";
             panel4.Size = new Size(1, 65);
-            panel4.TabIndex = 6;
+            panel4.TabIndex = 0;
             // 
             // panel1
             // 
@@ -100,7 +100,7 @@
             panel1.Location = new Point(428, 17);
             panel1.Name = "panel1";
             panel1.Size = new Size(1, 65);
-            panel1.TabIndex = 5;
+            panel1.TabIndex = 2;
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             label1.Location = new Point(451, 52);
             label1.Name = "label1";
             label1.Size = new Size(351, 28);
-            label1.TabIndex = 3;
+            label1.TabIndex = 4;
             label1.Text = "Inicia a movimentação do veículo no estacionado.";
             // 
             // lbl_Subtitulo
@@ -121,7 +121,7 @@
             lbl_Subtitulo.Location = new Point(445, 10);
             lbl_Subtitulo.Name = "lbl_Subtitulo";
             lbl_Subtitulo.Size = new Size(238, 49);
-            lbl_Subtitulo.TabIndex = 2;
+            lbl_Subtitulo.TabIndex = 3;
             lbl_Subtitulo.Text = "Registrar Entrada";
             // 
             // lbl_Titulo
@@ -148,7 +148,7 @@
             // grp_BuscarVeiculo
             // 
             grp_BuscarVeiculo.Controls.Add(msk_Placaveiculo);
-            grp_BuscarVeiculo.Controls.Add(button1);
+            grp_BuscarVeiculo.Controls.Add(btn_BuscarPorPlaca);
             grp_BuscarVeiculo.Controls.Add(lbl_PlacaVeiculo);
             grp_BuscarVeiculo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grp_BuscarVeiculo.ForeColor = SystemColors.HotTrack;
@@ -163,28 +163,28 @@
             // 
             msk_Placaveiculo.BorderStyle = BorderStyle.FixedSingle;
             msk_Placaveiculo.Location = new Point(152, 47);
-            msk_Placaveiculo.Mask = "000-0000";
+            msk_Placaveiculo.Mask = "aaaaaaa";
             msk_Placaveiculo.Name = "msk_Placaveiculo";
             msk_Placaveiculo.Size = new Size(241, 29);
-            msk_Placaveiculo.TabIndex = 8;
+            msk_Placaveiculo.TabIndex = 1;
             // 
-            // button1
+            // btn_BuscarPorPlaca
             // 
-            button1.BackColor = Color.FromArgb(239, 239, 241);
-            button1.FlatAppearance.BorderColor = SystemColors.GrayText;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.ForeColor = Color.Black;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 0;
-            button1.ImageList = imgIconePesquisa;
-            button1.Location = new Point(426, 47);
-            button1.Name = "button1";
-            button1.Size = new Size(203, 33);
-            button1.TabIndex = 4;
-            button1.Text = "Buscar por Placa";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btn_BuscarPorPlaca.BackColor = Color.FromArgb(239, 239, 241);
+            btn_BuscarPorPlaca.FlatAppearance.BorderColor = SystemColors.GrayText;
+            btn_BuscarPorPlaca.FlatStyle = FlatStyle.Flat;
+            btn_BuscarPorPlaca.Font = new Font("Segoe UI", 12F);
+            btn_BuscarPorPlaca.ForeColor = Color.Black;
+            btn_BuscarPorPlaca.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_BuscarPorPlaca.ImageIndex = 0;
+            btn_BuscarPorPlaca.ImageList = imgIconePesquisa;
+            btn_BuscarPorPlaca.Location = new Point(426, 47);
+            btn_BuscarPorPlaca.Name = "btn_BuscarPorPlaca";
+            btn_BuscarPorPlaca.Size = new Size(203, 33);
+            btn_BuscarPorPlaca.TabIndex = 2;
+            btn_BuscarPorPlaca.Text = "Buscar por Placa";
+            btn_BuscarPorPlaca.UseVisualStyleBackColor = false;
+            btn_BuscarPorPlaca.Click += btn_BuscarPorPlaca_Click;
             // 
             // imgIconePesquisa
             // 
@@ -201,7 +201,7 @@
             lbl_PlacaVeiculo.Location = new Point(22, 49);
             lbl_PlacaVeiculo.Name = "lbl_PlacaVeiculo";
             lbl_PlacaVeiculo.Size = new Size(124, 21);
-            lbl_PlacaVeiculo.TabIndex = 1;
+            lbl_PlacaVeiculo.TabIndex = 0;
             lbl_PlacaVeiculo.Text = "Placa do veículo:";
             // 
             // imgIconeCancelar
@@ -222,7 +222,7 @@
             grp_DadosVeiculo.Location = new Point(25, 232);
             grp_DadosVeiculo.Name = "grp_DadosVeiculo";
             grp_DadosVeiculo.Size = new Size(400, 160);
-            grp_DadosVeiculo.TabIndex = 2;
+            grp_DadosVeiculo.TabIndex = 1;
             grp_DadosVeiculo.TabStop = false;
             grp_DadosVeiculo.Text = "Dados do Veículo";
             // 
@@ -286,15 +286,14 @@
             // dtp_InfoHrEntrada
             // 
             dtp_InfoHrEntrada.CalendarFont = new Font("Segoe UI", 12F);
-            dtp_InfoHrEntrada.CustomFormat = "00:00";
+            dtp_InfoHrEntrada.CustomFormat = "HH:mm";
             dtp_InfoHrEntrada.Font = new Font("Segoe UI", 12F);
             dtp_InfoHrEntrada.Format = DateTimePickerFormat.Custom;
-            dtp_InfoHrEntrada.Location = new Point(185, 113);
+            dtp_InfoHrEntrada.Location = new Point(185, 118);
             dtp_InfoHrEntrada.Name = "dtp_InfoHrEntrada";
             dtp_InfoHrEntrada.ShowUpDown = true;
-            dtp_InfoHrEntrada.Size = new Size(86, 29);
-            dtp_InfoHrEntrada.TabIndex = 10;
-            dtp_InfoHrEntrada.Value = new DateTime(2026, 11, 27, 10, 58, 0, 0);
+            dtp_InfoHrEntrada.Size = new Size(104, 29);
+            dtp_InfoHrEntrada.TabIndex = 14;
             // 
             // dtp_InfoDtEntrada
             // 
@@ -467,15 +466,15 @@
         private Label lblDataEntrada;
         private Label lbl_HoraDeEntrada;
         private DateTimePicker dtp_InfoDtEntrada;
-        private DateTimePicker dtp_InfoHrEntrada;
         private Label label1;
         private Panel panel4;
         private Panel panel1;
         private ImageList imgIconeConfirmar;
         private ImageList imgIconeCancelar;
-        private Button button1;
+        private Button btn_BuscarPorPlaca;
         private ImageList imageList1;
         private ImageList imgIconePesquisa;
         private MaskedTextBox msk_Placaveiculo;
+        private DateTimePicker dtp_InfoHrEntrada;
     }
 }
